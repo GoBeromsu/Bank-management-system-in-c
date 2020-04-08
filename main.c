@@ -4,6 +4,8 @@
 void edit();
 void menu();
 void view_list();
+void new_acc();
+void transact();
 
  struct Account {
 	
@@ -13,7 +15,7 @@ void view_list();
 		char phone_num[30]; // 전화번호 ex. 01040121143  
 		int deposit_am; //amount, 예금 금액  
 		int deposit_tm; // term, 예금 기간  
-		int account_num;
+		char account_num[30]; //계좌번호
 };
 
 
@@ -38,15 +40,18 @@ void view_list();
 		 	return 0;
 	
 }
+
+ struct Account person[2];
+
 // 구조체를 입력하면 정보를 출력해주는 함 수  
  void printAccount(struct Account p) {
-	 	printf("%s\n", p.name);
-	 	printf("%d\n", p.age);
-	 	printf("%d\n", p.birth);
-	 	printf("%d\n", p.deposit_am);
-		printf("%d\n", p.deposit_tm);
-		printf("%s\n", p.phone_num);
-		printf("%d\n", p.account_num);
+	 	printf("이름:%s\n", p.name);
+	 	printf("나이:%d\n", p.age);
+	 	printf("생일:%d\n", p.birth);
+	 	printf("예금 금액:%d\n", p.deposit_am);
+		printf("예금 기간:%d\n", p.deposit_tm);
+		printf("핸드폰 번호:%s\n", p.phone_num);
+		printf("계좌번호:%d\n", p.account_num);
 	
 }
  void menu()
@@ -66,31 +71,36 @@ void view_list();
 	 	printf("\n");
 
 		 	int key = 0;
+		printf("Enter your choice");
 	 	scanf("%d", &key);
 	
 		if (key == 1) {
-				printf("1번 입력");
+				printf("1번 입력\n");
 		
 	}
 	 	else if (key == 2) {
-		 		printf("2번 입력");
-		
+		 		printf("2번 입력\n");
+				edit();
+				menu();
 	}
 	 	else if (key == 3) {
-		 		printf("3번 입력");
+		 		printf("3번 입력\n");
+		 		transact();
+		 		menu();
 		
 	}
 	 	else if (key == 4) {
-		 		printf("4번 입력");
+		 		printf("4번 입력\n");
 		
 	}
 	 	else if (key == 5) {
-		 		printf("5번 입력");
+		 		printf("5번 입력\n");
 		
 	}
 	 	else if (key == 6) {
-		 		printf("6번 입력");
-		
+		 		printf("6번 입력\n");
+				view_list();
+				menu();
 	}
 	 	else {
 				menu();
@@ -100,7 +110,7 @@ void view_list();
 
 		 }
 
- struct Account person[2];
+
 
 void edit()
 {
@@ -177,3 +187,116 @@ void view_list()
 
 
 }
+
+void transact()
+{
+
+	int x, y, z;
+	int i = 0;
+
+	printf("계좌를 선택하세요(1번:%s님의 계좌,2번:%s님의 계좌,3번:%s님의 계좌):", person[0].name, person[1].name, person[2].name);
+	scanf("%d", &x);
+
+	if (x == 1)
+	{
+		printf("--%s님의 계좌가 선택 되었습니다--.\n", person[0]);
+		printf("입출금 여부를 선택하세요(1번:입금,2번:출금):");
+		scanf("%d", &y);
+
+		if (y == 1)
+		{
+			printf("입금하실 금액:");
+			scanf("%d", &z);
+
+			person[0].deposit_am = z + person[0].deposit_am;
+
+			printf("입금이 완료 되었습니다.\n");
+			printf("현재금액:%d\n", person[0].deposit_am);
+		}
+		else if (y == 2)
+		{
+			printf("출금하실 금액:");
+			scanf("%d", &z);
+			printf("보낼 사람:");
+			scanf("%s", person[i].name);
+
+			person[0].deposit_am = person[0].deposit_am - z;
+			person[i].deposit_am = person[i].deposit_am + z;
+
+			printf("출금이 완료 되었습니다.\n");
+			printf("현재 금액:%d\n", person[0].deposit_am);
+
+		}
+	}
+	else if (x == 2)
+	{
+		printf("--%s님의 계좌가 선택 되었습니다--.\n", person[1]);
+		printf("입출금 여부를 선택하세요(1번:입금,2번:출금):");
+		scanf("%d", &y);
+
+
+		if (y == 1)
+		{
+			printf("입금하실 금액:");
+			scanf("%d", &z);
+
+			person[1].deposit_am = z + person[1].deposit_am;
+
+			printf("입금이 완료 되었습니다.\n");
+			printf("현재금액:%d\n", person[1].deposit_am);
+		}
+		else if (y == 2)
+		{
+			printf("출금하실 금액:");
+			scanf("%d", &z);
+			printf("보낼 사람:");
+			scanf("%s", person[i].name);
+
+			person[1].deposit_am = person[1].deposit_am - z;
+			person[i].deposit_am = person[i].deposit_am + z;
+
+			printf("출금이 완료 되었습니다.\n");
+			printf("현재 금액:%d\n", person[1].deposit_am);
+		}
+	}
+	else if (x == 3)
+	{
+		printf("--%s님의 계좌가 선택 되었습니다--.\n", person[2]);
+		printf("입출금 여부를 선택하세요(1번:입금,2번:출금):");
+		scanf("%d", &y);
+
+
+
+		if (y == 1)
+		{
+			printf("입금하실 금액:");
+			scanf("%d", &z);
+
+			person[2].deposit_am = z + person[2].deposit_am;
+
+			printf("입금이 완료 되었습니다.\n");
+			printf("현재금액:%d\n", person[2].deposit_am);
+		}
+		else if (y == 2)
+		{
+			printf("출금하실 금액:");
+			scanf("%d", &z);
+			printf("보낼 사람:");
+			scanf("%s", person[i].name);
+
+			person[2].deposit_am = person[2].deposit_am - z;
+			person[i].deposit_am = person[i].deposit_am + z;
+
+			printf("출금이 완료 되었습니다.\n");
+			printf("현재 금액:%d\n", person[2].deposit_am);
+		}
+
+	}
+
+
+
+}
+
+
+
+
