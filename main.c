@@ -30,17 +30,16 @@ struct Account {
 
 // menu로 이동하는 분기점이 되는 함수 
 void call_menu() {
-	
-	int c_key;
-	
-	printf("menu로 돌아 가시겠습니까? 원하신다면 1을 입력해 주십시오:");
-	scanf("%d", &c_key);
 
-	if (c_key == 1) {
+	printf("menu로 돌아 가시겠습니까? 원하신다면 Y를 입력해 주십시오\n");
+	char c_key;
+	scanf("%c", &c_key);
+
+	if (c_key == 'Y' || c_key == 'y') {
 		menu();
-	 } 
-	else{
-	
+	}
+	else {
+		call_menu();
 	}
 }
 void reset_acc(struct Account p) {
@@ -70,8 +69,8 @@ int main(void) {
 	//	printAccount(person[0]); 
 
 
-	
-	menu();
+
+	see();
 	return 0;
 
 }
@@ -87,7 +86,6 @@ void printAccount(struct Account p) {
 	printf("예금 기간:%d\n", p.deposit_tm);
 	printf("핸드폰 번호:%s\n", p.phone_num);
 	printf("계좌번호:%s\n", p.account_num);
-	call_menu();
 
 }
 void erase() {
@@ -109,7 +107,23 @@ void erase() {
 }
 
 void see() {
+	int key = 0;
 
+	printf("몇번 고객님을 보시겠습니까?");
+	scanf("%d", &key);
+
+	if (key == 1) {
+		printAccount(person[0]);
+	}
+	else if (key == 2) {
+		printAccount(person[1]);
+	}
+	else if (key == 3) {
+		printAccount(person[2]);
+	}
+	else {
+		see();
+	}
 }
 
 void menu()
@@ -135,17 +149,18 @@ void menu()
 	if (key == 1) {
 		printf("1번 입력\n");
 		new_acc();
-		
+		menu();
 	}
 	else if (key == 2) {
 		printf("2번 입력\n");
 		edit();
-		
+		menu();
 	}
 	else if (key == 3) {
 		printf("3번 입력\n");
 		transact();
-	
+		menu();
+
 	}
 	else if (key == 4) {
 		printf("4번 입력\n");
@@ -153,12 +168,12 @@ void menu()
 	}
 	else if (key == 5) {
 		printf("5번 입력\n");
-        erase();
+
 	}
 	else if (key == 6) {
 		printf("6번 입력\n");
 		view_list();
-	
+		menu();
 	}
 	else if (key == 7) {
 
@@ -210,7 +225,6 @@ void edit()
 		else if (x == 2)
 			break;
 	}
-	call_menu();
 }
 
 void view_list()
@@ -221,7 +235,7 @@ void view_list()
 	printAccount(person[1]);
 	printf("고객 %s의 계좌정보입니다.\n", person[2].name);
 	printAccount(person[2]);
-	call_menu();
+
 
 }
 
@@ -249,7 +263,6 @@ void transact()
 
 			printf("입금이 완료 되었습니다.\n");
 			printf("현재금액:%d\n", person[0].deposit_am);
-			call_menu();
 		}
 		else if (y == 2)
 		{
@@ -265,7 +278,6 @@ void transact()
 
 			printf("출금이 완료 되었습니다.\n");
 			printf("현재 금액:%d\n", person[0].deposit_am);
-			call_menu();
 
 		}
 	}
@@ -285,7 +297,6 @@ void transact()
 
 			printf("입금이 완료 되었습니다.\n");
 			printf("현재금액:%d\n", person[1].deposit_am);
-			call_menu();
 		}
 		else if (y == 2)
 		{
@@ -301,7 +312,6 @@ void transact()
 
 			printf("출금이 완료 되었습니다.\n");
 			printf("현재 금액:%d\n", person[1].deposit_am);
-			call_menu();
 		}
 	}
 	else if (x == 3)
@@ -321,7 +331,6 @@ void transact()
 
 			printf("입금이 완료 되었습니다.\n");
 			printf("현재금액:%d\n", person[2].deposit_am);
-			call_menu();
 		}
 		else if (y == 2)
 		{
@@ -337,7 +346,6 @@ void transact()
 
 			printf("출금이 완료 되었습니다.\n");
 			printf("현재 금액:%d\n", person[2].deposit_am);
-			
 		}
 
 	}
@@ -393,7 +401,7 @@ void new_acc()
 
 
 	}
- call_menu();
+
 }
 
 
