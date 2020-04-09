@@ -142,66 +142,42 @@ void menu()
 
 void edit()
 {
+	int i;
 	int x;
 
-	printf("< %s님의 고객정보입니다. >\n", person[0].name);
-	printAccount(person[0]);
-	printf("\n");
-	printf("< %s님의 고객정보입니다. >\n", person[1].name);
-	printAccount(person[1]);
-	printf("-----------------------");
-	printf("\n");
-	printf("< %s님의 고객정보입니다. >\n", person[2].name);
-	printAccount(person[2]);
-	printf("-----------------------");
-	printf("\n");
-	printf("정보를 수정할 고객을 선택하세요(1번,2번,3번):");
-	scanf("%d", &x);
+	printf("정보를 수정할 고객고유 번호를 선택하세요(0,1,2):");
+	scanf("%d", &i);
 	printf("\n");
 
-	if (x == 1)
+	while (1)
 	{
-		printf("정보를 수정합니다.\n");
-		printf("이름:");
-		scanf("%s", person[0].name);
-		printf("나이:");
-		scanf("%d", &person[0].age);
-		printf("생일");
-		scanf("%s", &person[0].birth);
-		printf("핸드폰번호:");
-		scanf("%d", person[0].phone_num);
+		printf("< %s님의 고객정보입니다. >\n", person[i].name);
+		printAccount(person[i]);
 		printf("\n");
-		printf("정보 수정이 완료되었습니다.");
-	}
-	else if (x == 2)
-	{
-		printf("정보를 수정합니다.\n");
-		printf("이름:");
-		scanf("%s", &person[1].name);
-		printf("나이:");
-		scanf("%d", person[1].age);
-		printf("생일");
-		scanf("%s", &person[1].birth);
-		printf("핸드폰번호:");
-		scanf("%d", person[1].phone_num);
-		printf("\n");
-		printf("정보 수정이 완료되었습니다.");
-	}
-	else if (x == 3)
-	{
-		printf("정보를 수정합니다.\n");
-		printf("이름:");
-		scanf("%s", &person[2].name);
-		printf("나이:");
-		scanf("%d", person[2].age);
-		printf("생일");
-		scanf("%s", &person[2].birth);
-		printf("핸드폰번호:");
-		scanf("%d", person[2].phone_num);
-		printf("\n");
-		printf("정보 수정이 완료되었습니다.");
-	}
 
+
+		printf("정보를 수정합니다.\n");
+		printf("이름:");
+		scanf("%s", person[i].name);
+		printf("나이:");
+		scanf("%d", &person[i].age);
+		printf("생일");
+		scanf("%s", &person[i].birth);
+		printf("핸드폰번호:");
+		scanf("%s", person[i].phone_num);
+		printf("\n");
+		printf("정보 수정이 완료되었습니다.\n");
+
+		printf("정보 수정을 계속 하시겠습니까?(1번:yes, 2번:no)");
+		scanf("%d", &x);
+
+		if (x == 1)
+		{
+			continue;
+		}
+		else if (x == 2)
+			break;
+	}
 }
 
 void view_list()
@@ -398,7 +374,7 @@ void call_menu(){
 	}
 } 
 void reset_acc(struct Account p){
-	p.account_num =0;
+	strcpy(p.account_num,"0");
 	p.age=0;
 	p.birth;
 	p.deposit_am=0;
