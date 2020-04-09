@@ -6,7 +6,7 @@
 #include<string.h>
 
 
-void delete_();
+
 void edit();
 void menu();
 void view_list();
@@ -18,23 +18,23 @@ void easter_egg();
 
 struct Account {
 
-	char name[10]; //ï¿½Ì¸ï¿½  
-	int age; // ï¿½ï¿½ï¿½ï¿½  
-	char birth[10]; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ex.990112  
-	char phone_num[30]; // ï¿½ï¿½È­ï¿½ï¿½È£ ex. 01040121143  
-	int deposit_am; //amount, ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½  
-	int deposit_tm; // term, ï¿½ï¿½ï¿½ï¿½ ï¿½â°£  
-	char account_num[30]; //ï¿½ï¿½ï¿½Â¹ï¿½È£
-	char id[20]; //ï¿½ï¿½ï¿½Ìµï¿½
-	int passowrd; //ï¿½ï¿½Ð¹ï¿½È£
+	char name[10]; //ÀÌ¸§  
+	int age; // ³ªÀÌ  
+	char birth[10]; // »ý³â¿ùÀÏ ex.990112  
+	char phone_num[30]; // ÀüÈ­¹øÈ£ ex. 01040121143  
+	int deposit_am; //amount, ¿¹±Ý ±Ý¾×  
+	int deposit_tm; // term, ¿¹±Ý ±â°£  
+	char account_num[30]; //°èÁÂ¹øÈ£
+	char id[20]; //¾ÆÀÌµð
+	int passowrd; //ºñ¹Ð¹øÈ£
 };
 
-// menuï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ï´ï¿½ ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½Ô¼ï¿½ 
+// menu·Î ÀÌµ¿ÇÏ´Â ºÐ±âÁ¡ÀÌ µÇ´Â ÇÔ¼ö 
 void call_menu() {
 
 	int c_key = 0;
 
-	printf("menuï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã°Ú½ï¿½ï¿½Ï±ï¿½? ï¿½ï¿½ï¿½Ï½Å´Ù¸ï¿½ 1ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½:");
+	printf("menu·Î µ¹¾Æ °¡½Ã°Ú½À´Ï±î? ¿øÇÏ½Å´Ù¸é 1À» ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À:");
 	scanf("%d", &c_key);
 
 	if (c_key == 1) {
@@ -58,11 +58,11 @@ void reset_acc(struct Account p) {
 
 int main(void) {
 
-	//	struct Account person[5]; // ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½  
+	//	struct Account person[5]; // ±¸Á¶Ã¼ ¹è¿­ ¼±¾ð  
 	//	 
-	   // ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+	   // ±¸Á¶Ã¼ Á¢±Ù ¹ý ¿¹½Ã 
 
-   //	strcpy(person[0].name, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"); 
+   //	strcpy(person[0].name, "°í¹ü¼ö"); 
    //	strcpy(person[0].phone_num, "01040121143"); 
 	//	person[0].birth = 990112; 
 	//	person[0].age= 22; 
@@ -82,20 +82,20 @@ int main(void) {
 
 struct Account person[3];
 
-// ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ ï¿½ï¿½  
+// ±¸Á¶Ã¼¸¦ ÀÔ·ÂÇÏ¸é Á¤º¸¸¦ Ãâ·ÂÇØÁÖ´Â ÇÔ ¼ö  
 void printAccount(struct Account p) {
-	printf("ï¿½Ì¸ï¿½:%s\n", p.name);
-	printf("ï¿½ï¿½ï¿½ï¿½:%d\n", p.age);
-	printf("ï¿½ï¿½ï¿½ï¿½:%s\n", p.birth);
-	printf("ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½:%d\n", p.deposit_am);
-	printf("ï¿½ï¿½ï¿½ï¿½ ï¿½â°£:%d\n", p.deposit_tm);
-	printf("ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½È£:%s\n", p.phone_num);
-	printf("ï¿½ï¿½ï¿½Â¹ï¿½È£:%s\n", p.account_num);
+	printf("ÀÌ¸§:%s\n", p.name);
+	printf("³ªÀÌ:%d\n", p.age);
+	printf("»ýÀÏ:%s\n", p.birth);
+	printf("¿¹±Ý ±Ý¾×:%d\n", p.deposit_am);
+	printf("¿¹±Ý ±â°£:%d\n", p.deposit_tm);
+	printf("ÇÚµåÆù ¹øÈ£:%s\n", p.phone_num);
+	printf("°èÁÂ¹øÈ£:%s\n", p.account_num);
 
 }
 void erase() {
 	int key = 0;
-	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ [1,2,3]");
+	printf("»èÁ¦ÇÒ °èÁ¤À» ÀÔ·ÂÇØÁÖ¼¼¿ä [1,2,3]");
 	scanf("%d", &key);
 
 	if (key == 1) {
@@ -107,14 +107,14 @@ void erase() {
 	else if (key == 3) {
 		reset_acc(person[2]);
 	}
-	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½\n");
+	printf("°èÁ¤»èÁ¦°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù\n");
 	call_menu();
 }
 
 void see() {
 	int key = 0;
 
-	printf("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã°Ú½ï¿½ï¿½Ï±ï¿½?");
+	printf("¸î¹ø °í°´´ÔÀ» º¸½Ã°Ú½À´Ï±î?");
 	scanf("%d", &key);
 
 	if (key == 1) {
@@ -138,13 +138,13 @@ void menu()
 	printf("CUSTOMER ACCOUNT BANKING MANAGEMENT SYSTEM\n");
 	printf(" --WELCOME TO THE MAIN MENU-- \n");
 	printf("\n");
-	printf("1.Create new account(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½)\n");
-	printf("2.Update information of existing account(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)\n");
-	printf("3.For transaction(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½)\n");
-	printf("4.Check the details of existing account(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸)\n");
-	printf("5.Removing existing account(ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½)\n");
-	printf("6.View customer's list(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®)\n");
-	printf("7.Exit(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)\n");
+	printf("1.Create new account(°èÁÂ ¸¸µé±â)\n");
+	printf("2.Update information of existing account(Á¤º¸¼öÁ¤)\n");
+	printf("3.For transaction(Çö±Ý ÀÔÃâ±Ý)\n");
+	printf("4.Check the details of existing account(°èÁÂÁ¤º¸Á¶È¸)\n");
+	printf("5.Removing existing account(°èÁÂ»èÁ¦)\n");
+	printf("6.View customer's list(°í°´¸®½ºÆ®)\n");
+	printf("7.Exit(³ª°¡±â)\n");
 	printf("\n");
 
 	int key = 0;
@@ -152,33 +152,33 @@ void menu()
 	scanf("%d", &key);
 
 	if (key == 1) {
-		printf("1ï¿½ï¿½ ï¿½Ô·ï¿½\n");
+		printf("1¹ø ÀÔ·Â\n");
 		new_acc();
 		menu();
 	}
 	else if (key == 2) {
-		printf("2ï¿½ï¿½ ï¿½Ô·ï¿½\n");
+		printf("2¹ø ÀÔ·Â\n");
 		edit();
 		
 	}
 	else if (key == 3) {
-		printf("3ï¿½ï¿½ ï¿½Ô·ï¿½\n");
+		printf("3¹ø ÀÔ·Â\n");
 		transact();
 		call_menu();
 
 	}
 	else if (key == 4) {
-		printf("4ï¿½ï¿½ ï¿½Ô·ï¿½\n");
+		printf("4¹ø ÀÔ·Â\n");
 		see();
 		call_menu();
 	}
 	else if (key == 5) {
-		printf("5ï¿½ï¿½ ï¿½Ô·ï¿½\n");
+		printf("5¹ø ÀÔ·Â\n");
 		erase();
 		call_menu();
 	}
 	else if (key == 6) {
-		printf("6ï¿½ï¿½ ï¿½Ô·ï¿½\n");
+		printf("6¹ø ÀÔ·Â\n");
 		view_list();
 		call_menu();
 	}
@@ -200,31 +200,31 @@ void edit()
 	int i;
 	int x;
 
-	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½(0,1,2):");
+	printf("Á¤º¸¸¦ ¼öÁ¤ÇÒ °í°´°íÀ¯ ¹øÈ£¸¦ ¼±ÅÃÇÏ¼¼¿ä(0,1,2):");
 	scanf("%d", &i);
 	printf("\n");
 
-		printf("< %sï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. >\n", person[i].name);
+		printf("< %s´ÔÀÇ °í°´Á¤º¸ÀÔ´Ï´Ù. >\n", person[i].name);
 		printAccount(person[i]);
 		printf("\n");
 
 
-		printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.\n");
-		printf("ï¿½Ì¸ï¿½:");
+		printf("Á¤º¸¸¦ ¼öÁ¤ÇÕ´Ï´Ù.\n");
+		printf("ÀÌ¸§:");
 		scanf("%s", person[i].name);
-		printf("ï¿½ï¿½ï¿½ï¿½:");
+		printf("³ªÀÌ:");
 		scanf("%d", &person[i].age);
-		printf("ï¿½ï¿½ï¿½ï¿½");
+		printf("»ýÀÏ");
 		scanf("%s", &person[i].birth);
-		printf("ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½È£:");
+		printf("ÇÚµåÆù¹øÈ£:");
 		scanf("%s", person[i].phone_num);
 		printf("\n");
-		printf("ï¿½ï¿½Ä¡ï¿½ï¿½ : ");
+		printf("¿¹Ä¡±Ý : ");
 		scanf("%s", person[i].deposit_am);
 
-		printf("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n");
+		printf("Á¤º¸ ¼öÁ¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.\n");
 
-		printf("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ï½Ã°Ú½ï¿½ï¿½Ï±ï¿½?(YES : 1, NO : 2)");
+		printf("Á¤º¸ ¼öÁ¤À» °è¼Ó ÇÏ½Ã°Ú½À´Ï±î?(YES : 1, NO : 2)");
 		scanf("%d", &x);
 
 		if (x == 1)
@@ -238,11 +238,11 @@ void edit()
 
 void view_list()
 {
-	printf("ï¿½ï¿½ï¿½ï¿½ %sï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.\n", person[0].name);
+	printf("°í°´ %sÀÇ °èÁÂÁ¤º¸ÀÔ´Ï´Ù.\n", person[0].name);
 	printAccount(person[0]);
-	printf("ï¿½ï¿½ï¿½ï¿½ %sï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.\n", person[1].name);
+	printf("°í°´ %sÀÇ °èÁÂÁ¤º¸ÀÔ´Ï´Ù.\n", person[1].name);
 	printAccount(person[1]);
-	printf("ï¿½ï¿½ï¿½ï¿½ %sï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.\n", person[2].name);
+	printf("°í°´ %sÀÇ °èÁÂÁ¤º¸ÀÔ´Ï´Ù.\n", person[2].name);
 	printAccount(person[2]);
 
 
@@ -254,107 +254,107 @@ void transact()
 	int x, y, z;
 	int i = 0;
 
-	printf("ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½(1ï¿½ï¿½:%sï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½,2ï¿½ï¿½:%sï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½,3ï¿½ï¿½:%sï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½):", person[0].name, person[1].name, person[2].name);
+	printf("°èÁÂ¸¦ ¼±ÅÃÇÏ¼¼¿ä(1¹ø:%s´ÔÀÇ °èÁÂ,2¹ø:%s´ÔÀÇ °èÁÂ,3¹ø:%s´ÔÀÇ °èÁÂ):", person[0].name, person[1].name, person[2].name);
 	scanf("%d", &x);
 
 	if (x == 1)
 	{
-		printf("--%sï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½--.\n", person[0].name);
-		printf("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½(1ï¿½ï¿½:ï¿½Ô±ï¿½,2ï¿½ï¿½:ï¿½ï¿½ï¿½):");
+		printf("--%s´ÔÀÇ °èÁÂ°¡ ¼±ÅÃ µÇ¾ú½À´Ï´Ù--.\n", person[0].name);
+		printf("ÀÔÃâ±Ý ¿©ºÎ¸¦ ¼±ÅÃÇÏ¼¼¿ä(1¹ø:ÀÔ±Ý,2¹ø:Ãâ±Ý):");
 		scanf("%d", &y);
 
 		if (y == 1)
 		{
-			printf("ï¿½Ô±ï¿½ï¿½Ï½ï¿½ ï¿½Ý¾ï¿½:");
+			printf("ÀÔ±ÝÇÏ½Ç ±Ý¾×:");
 			scanf("%d", &z);
 
 			person[0].deposit_am = z + person[0].deposit_am;
 
-			printf("ï¿½Ô±ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n");
-			printf("ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½:%d\n", person[0].deposit_am);
+			printf("ÀÔ±ÝÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.\n");
+			printf("ÇöÀç±Ý¾×:%d\n", person[0].deposit_am);
 		}
 		else if (y == 2)
 		{
-			printf("ï¿½ï¿½ï¿½ï¿½Ï½ï¿½ ï¿½Ý¾ï¿½:");
+			printf("Ãâ±ÝÇÏ½Ç ±Ý¾×:");
 			scanf("%d", &z);
-			printf("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£(0,1,2)");
+			printf("º¸³¾ °èÁÂÀÇ °íÀ¯¹øÈ£(0,1,2)");
 			scanf("%d", &i);
-			printf("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¹ï¿½È£:");
+			printf("º¸³¾ °èÁÂ¹øÈ£:");
 			scanf("%s", person[i].account_num);
 
 			person[0].deposit_am = person[0].deposit_am - z;
 			person[i].deposit_am = person[i].deposit_am + z;
 
-			printf("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n");
-			printf("ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½:%d\n", person[0].deposit_am);
+			printf("Ãâ±ÝÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.\n");
+			printf("ÇöÀç ±Ý¾×:%d\n", person[0].deposit_am);
 
 		}
 	}
 	else if (x == 2)
 	{
-		printf("--%sï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½--.\n", person[1].name);
-		printf("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½(1ï¿½ï¿½:ï¿½Ô±ï¿½,2ï¿½ï¿½:ï¿½ï¿½ï¿½):");
+		printf("--%s´ÔÀÇ °èÁÂ°¡ ¼±ÅÃ µÇ¾ú½À´Ï´Ù--.\n", person[1].name);
+		printf("ÀÔÃâ±Ý ¿©ºÎ¸¦ ¼±ÅÃÇÏ¼¼¿ä(1¹ø:ÀÔ±Ý,2¹ø:Ãâ±Ý):");
 		scanf("%d", &y);
 
 
 		if (y == 1)
 		{
-			printf("ï¿½Ô±ï¿½ï¿½Ï½ï¿½ ï¿½Ý¾ï¿½:");
+			printf("ÀÔ±ÝÇÏ½Ç ±Ý¾×:");
 			scanf("%d", &z);
 
 			person[1].deposit_am = z + person[1].deposit_am;
 
-			printf("ï¿½Ô±ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n");
-			printf("ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½:%d\n", person[1].deposit_am);
+			printf("ÀÔ±ÝÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.\n");
+			printf("ÇöÀç±Ý¾×:%d\n", person[1].deposit_am);
 		}
 		else if (y == 2)
 		{
-			printf("ï¿½ï¿½ï¿½ï¿½Ï½ï¿½ ï¿½Ý¾ï¿½:");
+			printf("Ãâ±ÝÇÏ½Ç ±Ý¾×:");
 			scanf("%d", &z);
-			printf("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£(0,1,2)");
+			printf("º¸³¾ °èÁÂÀÇ °íÀ¯¹øÈ£(0,1,2)");
 			scanf("%d", &i);
-			printf("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¹ï¿½È£:");
+			printf("º¸³¾ °èÁÂ¹øÈ£:");
 			scanf("%s", person[i].account_num);
 
 			person[1].deposit_am = person[1].deposit_am - z;
 			person[i].deposit_am = person[i].deposit_am + z;
 
-			printf("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n");
-			printf("ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½:%d\n", person[1].deposit_am);
+			printf("Ãâ±ÝÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.\n");
+			printf("ÇöÀç ±Ý¾×:%d\n", person[1].deposit_am);
 		}
 	}
 	else if (x == 3)
 	{
-		printf("--%sï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½--.\n", person[2].name);
-		printf("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½(1ï¿½ï¿½:ï¿½Ô±ï¿½,2ï¿½ï¿½:ï¿½ï¿½ï¿½):");
+		printf("--%s´ÔÀÇ °èÁÂ°¡ ¼±ÅÃ µÇ¾ú½À´Ï´Ù--.\n", person[2].name);
+		printf("ÀÔÃâ±Ý ¿©ºÎ¸¦ ¼±ÅÃÇÏ¼¼¿ä(1¹ø:ÀÔ±Ý,2¹ø:Ãâ±Ý):");
 		scanf("%d", &y);
 
 
 
 		if (y == 1)
 		{
-			printf("ï¿½Ô±ï¿½ï¿½Ï½ï¿½ ï¿½Ý¾ï¿½:");
+			printf("ÀÔ±ÝÇÏ½Ç ±Ý¾×:");
 			scanf("%d", &z);
 
 			person[2].deposit_am = z + person[2].deposit_am;
 
-			printf("ï¿½Ô±ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n");
-			printf("ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½:%d\n", person[2].deposit_am);
+			printf("ÀÔ±ÝÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.\n");
+			printf("ÇöÀç±Ý¾×:%d\n", person[2].deposit_am);
 		}
 		else if (y == 2)
 		{
-			printf("ï¿½ï¿½ï¿½ï¿½Ï½ï¿½ ï¿½Ý¾ï¿½:");
+			printf("Ãâ±ÝÇÏ½Ç ±Ý¾×:");
 			scanf("%d", &z);
-			printf("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£(0,1,2)");
+			printf("º¸³¾ °èÁÂÀÇ °íÀ¯¹øÈ£(0,1,2)");
 			scanf("%d", &i);
-			printf("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¹ï¿½È£:");
+			printf("º¸³¾ °èÁÂ¹øÈ£:");
 			scanf("%s", person[i].account_num);
 
 			person[2].deposit_am = person[2].deposit_am - z;
 			person[i].deposit_am = person[i].deposit_am + z;
 
-			printf("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n");
-			printf("ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½:%d\n", person[2].deposit_am);
+			printf("Ãâ±ÝÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.\n");
+			printf("ÇöÀç ±Ý¾×:%d\n", person[2].deposit_am);
 		}
 
 	}
@@ -370,34 +370,34 @@ void new_acc()
 
 	while (1)
 	{
-		printf("-----ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.-----\n");
+		printf("-----°í°´´ÔÀÇ °èÁ¤À» »ý¼ºÇÕ´Ï´Ù.-----\n");
 		printf("\n");
-		printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½(0,1,2):");
+		printf("°íÀ¯¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä(0,1,2):");
 		scanf("%d", &i);
 
-		printf("ï¿½Ì¸ï¿½:");
+		printf("ÀÌ¸§:");
 		scanf("%s", person[i].name);
 
-		printf("ï¿½ï¿½ï¿½ï¿½:");
+		printf("³ªÀÌ:");
 		scanf("%d", &person[i].age);
 
-		printf("ï¿½ï¿½ï¿½ï¿½:");
+		printf("»ýÀÏ:");
 		scanf("%s", person[i].birth);
 
-		printf("ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½È£:");
+		printf("ÇÚµåÆù¹øÈ£:");
 		scanf("%s", person[i].phone_num);
 
-		printf("ï¿½ï¿½Ä¡ï¿½ï¿½:");
+		printf("¿¹Ä¡±Ý:");
 		scanf("%d", &person[i].deposit_am);
 
-		printf("ï¿½ï¿½ï¿½Â¹ï¿½È£:");
+		printf("°èÁÂ¹øÈ£:");
 		scanf("%s", person[i].account_num);
 
 		printf("\n");
-		printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ %dï¿½ï¿½ ï¿½Ô´Ï´ï¿½.\n", i);
-		printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n");
+		printf("°í°´´ÔÀÇ °íÀ¯¹øÈ£´Â %d¹ø ÀÔ´Ï´Ù.\n", i);
+		printf("°èÁ¤ÀÌ »ý¼º µÇ¾ú½À´Ï´Ù.\n");
 
-		printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï½Ã°Ú½ï¿½ï¿½Ï±ï¿½(YES : 1 , NO = 2)?:");
+		printf("°èÁ¤À» °è¼Ó »ý¼º ÇÏ½Ã°Ú½À´Ï±î(YES : 1 , NO = 2)?:");
 		scanf("%d", &x);
 
 		if (x == 1)
@@ -416,7 +416,6 @@ void easter_egg()
 {
 	int i;
 	char j;
-	int count=0;
 
 	for (i = 0; i <= 10000; i++)
 	{
@@ -472,29 +471,22 @@ void easter_egg()
 
 	while (1)
 	{
-		printf("ï¿½ï¿½ï¿½ï¿½ Å°ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½//5ï¿½ï¿½ ï¿½Ô·Â°ï¿½ï¿½ï¿½//(hin:ï¿½Ø°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½):");
+		printf("º¸¾È Å°¸¦ ÀÔ·ÂÇÏ¼¼¿ä(hin:ÇØ°ñ ¼Ó ¼ýÀÚ):");
 		scanf("%d", &j);
-
-		count++;
 
 		if (j == 56)
 		{
-			printf("ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n");
+			printf("½Ã½ºÅÛÀÌ Á¤»óÀûÀ¸·Î º¹±¸ µÇ¾ú½À´Ï´Ù.\n");
 			break;
 
 
 		}
 		else if (j != 56)
 		{
-			if (count > 4)
-			{
-				delete_();
-				break;
-			}
+
 			continue;
 
 		}
-
 
 	}
 
@@ -502,10 +494,5 @@ void easter_egg()
 
 }
 
-void delete_()
-{
-	printf("ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n");
-	exit(1);
 
-}
 
