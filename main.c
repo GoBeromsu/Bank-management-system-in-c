@@ -70,7 +70,7 @@ int main(void) {
 
 
 
-	call_menu();
+	menu();
 
 
 	return 0;
@@ -390,7 +390,7 @@ void new_acc()
 		printf("고객님의 고유번호는 %d번 입니다.\n", i);
 		printf("계정이 생성 되었습니다.\n");
 
-		printf("계정을 계속 생성 하시겠습니까(1번:yes ,2번:no)?:");
+		printf("계정을 계속 생성 하시겠습니까(YES : 1 , NO = 2)?:");
 		scanf("%d", &x);
 
 		if (x == 1)
