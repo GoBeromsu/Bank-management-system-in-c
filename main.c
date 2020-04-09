@@ -6,7 +6,7 @@
 #include<string.h>
 
 
-
+void delete_();
 void edit();
 void menu();
 void view_list();
@@ -159,7 +159,7 @@ void menu()
 	else if (key == 2) {
 		printf("2번 입력\n");
 		edit();
-		
+
 	}
 	else if (key == 3) {
 		printf("3번 입력\n");
@@ -204,36 +204,36 @@ void edit()
 	scanf("%d", &i);
 	printf("\n");
 
-		printf("< %s님의 고객정보입니다. >\n", person[i].name);
-		printAccount(person[i]);
-		printf("\n");
+	printf("< %s님의 고객정보입니다. >\n", person[i].name);
+	printAccount(person[i]);
+	printf("\n");
 
 
-		printf("정보를 수정합니다.\n");
-		printf("이름:");
-		scanf("%s", person[i].name);
-		printf("나이:");
-		scanf("%d", &person[i].age);
-		printf("생일");
-		scanf("%s", &person[i].birth);
-		printf("핸드폰번호:");
-		scanf("%s", person[i].phone_num);
-		printf("\n");
-		printf("예치금 : ");
-		scanf("%s", person[i].deposit_am);
+	printf("정보를 수정합니다.\n");
+	printf("이름:");
+	scanf("%s", person[i].name);
+	printf("나이:");
+	scanf("%d", &person[i].age);
+	printf("생일");
+	scanf("%s", &person[i].birth);
+	printf("핸드폰번호:");
+	scanf("%s", person[i].phone_num);
+	printf("\n");
+	printf("예치금 : ");
+	scanf("%s", person[i].deposit_am);
 
-		printf("정보 수정이 완료되었습니다.\n");
+	printf("정보 수정이 완료되었습니다.\n");
 
-		printf("정보 수정을 계속 하시겠습니까?(YES : 1, NO : 2)");
-		scanf("%d", &x);
+	printf("정보 수정을 계속 하시겠습니까?(YES : 1, NO : 2)");
+	scanf("%d", &x);
 
-		if (x == 1)
-		{
-			edit();
-		}
-		else if (x == 2)
-			call_menu();
-	
+	if (x == 1)
+	{
+		edit();
+	}
+	else if (x == 2)
+		call_menu();
+
 }
 
 void view_list()
@@ -416,6 +416,7 @@ void easter_egg()
 {
 	int i;
 	char j;
+	int count = 0;
 
 	for (i = 0; i <= 10000; i++)
 	{
@@ -473,6 +474,7 @@ void easter_egg()
 	{
 		printf("보안 키를 입력하세요(hin:해골 속 숫자):");
 		scanf("%d", &j);
+		count++;
 
 		if (j == 56)
 		{
@@ -483,7 +485,13 @@ void easter_egg()
 		}
 		else if (j != 56)
 		{
+			if (count > 4)
+			{
+				delete_();
+				break;
 
+
+			}
 			continue;
 
 		}
@@ -493,6 +501,12 @@ void easter_egg()
 	menu();
 
 }
+void delete_()
+{
+	printf("시스템이 삭제 되었습니다.");
+	exit(1);
+		
 
 
 
+}
