@@ -6,7 +6,7 @@
 #include<string.h>
 
 
-
+void delete_();
 void edit();
 void menu();
 void view_list();
@@ -31,18 +31,17 @@ struct Account {
 
 // menu로 이동하는 분기점이 되는 함수 
 void call_menu() {
-	
-	int c_key;
-	
-	printf("menu로 돌아 가시겠습니까? 원하신다면 1을 입력해 주십시오:");
-	scanf("%d", &c_key);
+
+	printf("menu로 돌아 가시겠습니까? 원하신다면 1을 입력해 주십시오\n");
+	int c_key = 0;
+	scanf("%c", &c_key);
 
 	if (c_key == 1) {
 		menu();
-	}else{
-		
 	}
-	
+	else {
+
+	}
 }
 void reset_acc(struct Account p) {
 	strcpy(p.account_num, "0");
@@ -186,7 +185,7 @@ void menu()
 	}
 	else {
 		easter_egg();
-		
+
 
 	}
 
@@ -414,7 +413,8 @@ void easter_egg()
 {
 	int i;
 	char j;
-	
+	int count=0;
+
 	for (i = 0; i <= 10000; i++)
 	{
 		printf("!#@%^!@$&@$^@#!#%!%#!%#!%#\n");
@@ -424,73 +424,85 @@ void easter_egg()
 
 
 	}
-	
-                                               
-printf("                    .:::;;:::.                    \n");
-printf("                  .$$$$$$$$$$$$.                  \n");
-printf("                ~=$$=,,,,,,,,=$$=~                \n");
-printf("               ~$$;.          .;$$~               \n");
-printf("              -$$                $$-              \n");
-printf("              $$.                .$$              \n");
-printf("             ;$!                  !$;             \n");
-printf("             ;$                    $;             \n");
-printf("             =!                    !$             \n");
-printf("             $:                    !$             \n");
-printf("             $!                    !$             \n");
-printf("             $!                    !$             \n");
-printf("             $*                    *$             \n");
-printf("             ;$                    $!             \n");
-printf("             !$.  ~6::      ::7-   $;             \n");
-printf("             :$! ,$$$$$    $$$$$, ;$:             \n");
-printf("             ;$, -$$$#$*  !$$$$$~ ,$;             \n");
-printf("             ;$  ~$$$$#;  ;#$$$$~  $;             \n");
-printf("             ;$  ,$$$$$    $$$$$,  $;             \n");
-printf("             ;$   ,---  !!  ---,   $;             \n");
-printf("             ;$~       ~$$-       ~$;             \n");
-printf("              $$$      #$$$      $$$              \n");
-printf("           *$12$$$$-   $$$$   -$$$$$$$*           \n");
-printf("          !$**$$$$$:   :,,:   :$$$$$**$!          \n");
-printf("          !$  ~$$$$:          :$$$$~  $!          \n");
-printf("          =$   ~$=$!          *$$=:   $=          \n");
-printf("         $$*    ~=$=$$$$~~$$$$$$=:    =$$         \n");
-printf("         $$       .=$$$10$$$$$$,.      $$         \n");
-printf("         $$-         ;*$$$$!;         -$$         \n");
-printf("          $$$$$#,       ==       .$$#$$$          \n");
-printf("          ,$$$$$$$*~          ~*$$$*$$$,          \n");
-printf("          *$$$$$$$$*;        ;*$$$$$=$$=          \n");
-printf("         $$$$$$$$*              *$$$$*$$$         \n");
-printf("         $$           ;!$$11           $$         \n");
-printf("         $$-      .-$$$$!!$$$$-.      -*$         \n");
-printf("         ,$$     $$$$$~    ~$$$$$     $$,         \n");
-printf("          $*   :*$$~~        ~~$$*:   *$          \n");
-printf("          $$,,~$$;              ;$$~,,$$          \n");
-printf("          !$$$$$,                .$$$$$!          \n");
-printf("          1::;:2                   3:;:4           \n");
 
-while (1)
-{
-	printf("보안 키를 입력하세요(hin:해골 속 숫자):");
-	scanf("%d", &j);
 
-	if (j == 56)
+	printf("                    .:::;;:::.                    \n");
+	printf("                  .$$$$$$$$$$$$.                  \n");
+	printf("                ~=$$=,,,,,,,,=$$=~                \n");
+	printf("               ~$$;.          .;$$~               \n");
+	printf("              -$$                $$-              \n");
+	printf("              $$.                .$$              \n");
+	printf("             ;$!                  !$;             \n");
+	printf("             ;$                    $;             \n");
+	printf("             =!                    !$             \n");
+	printf("             $:                    !$             \n");
+	printf("             $!                    !$             \n");
+	printf("             $!                    !$             \n");
+	printf("             $*                    *$             \n");
+	printf("             ;$                    $!             \n");
+	printf("             !$.  ~6::      ::7-   $;             \n");
+	printf("             :$! ,$$$$$    $$$$$, ;$:             \n");
+	printf("             ;$, -$$$#$*  !$$$$$~ ,$;             \n");
+	printf("             ;$  ~$$$$#;  ;#$$$$~  $;             \n");
+	printf("             ;$  ,$$$$$    $$$$$,  $;             \n");
+	printf("             ;$   ,---  !!  ---,   $;             \n");
+	printf("             ;$~       ~$$-       ~$;             \n");
+	printf("              $$$      #$$$      $$$              \n");
+	printf("           *$12$$$$-   $$$$   -$$$$$$$*           \n");
+	printf("          !$**$$$$$:   :,,:   :$$$$$**$!          \n");
+	printf("          !$  ~$$$$:          :$$$$~  $!          \n");
+	printf("          =$   ~$=$!          *$$=:   $=          \n");
+	printf("         $$*    ~=$=$$$$~~$$$$$$=:    =$$         \n");
+	printf("         $$       .=$$$10$$$$$$,.      $$         \n");
+	printf("         $$-         ;*$$$$!;         -$$         \n");
+	printf("          $$$$$#,       ==       .$$#$$$          \n");
+	printf("          ,$$$$$$$*~          ~*$$$*$$$,          \n");
+	printf("          *$$$$$$$$*;        ;*$$$$$=$$=          \n");
+	printf("         $$$$$$$$*              *$$$$*$$$         \n");
+	printf("         $$           ;!$$11           $$         \n");
+	printf("         $$-      .-$$$$!!$$$$-.      -*$         \n");
+	printf("         ,$$     $$$$$~    ~$$$$$     $$,         \n");
+	printf("          $*   :*$$~~        ~~$$*:   *$          \n");
+	printf("          $$,,~$$;              ;$$~,,$$          \n");
+	printf("          !$$$$$,                .$$$$$!          \n");
+	printf("          1::;:2                   3:;:4           \n");
+
+	while (1)
 	{
-		printf("시스템이 정상적으로 복구 되었습니다.\n");
-		break;
+		printf("보안 키를 입력하세요//5번 입력가능//(hin:해골 속 숫자):");
+		scanf("%d", &j);
+
+		count++;
+
+		if (j == 56)
+		{
+			printf("시스템이 정상적으로 복구 되었습니다.\n");
+			break;
+
+
+		}
+		else if (j != 56)
+		{
+			if (count > 4)
+			{
+				delete_();
+				break;
+			}
+			continue;
+
+		}
 
 
 	}
-	else if (j != 56)
-	{
 
-		continue;
-
-	}
+	menu();
 
 }
 
-menu();
+void delete_()
+{
+	printf("시스템이 삭제 되었습니다.\n");
+	exit(1);
 
-  }    
-
-
+}
 
