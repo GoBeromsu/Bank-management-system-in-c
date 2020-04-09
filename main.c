@@ -105,6 +105,9 @@ void menu()
 		view_list();
 		menu();
 	}
+	else if(key==7){
+		
+	}
 	else {
 		menu();
 
