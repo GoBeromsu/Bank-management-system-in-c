@@ -1,6 +1,12 @@
+
+#pragma warning(disable: 4996)
+
 #include <stdio.h> 
 #include <stdlib.h>
 #include<string.h>
+
+
+
 void edit();
 void menu();
 void view_list();
@@ -8,6 +14,7 @@ void new_acc();
 void transact();
 void see();
 void erase();
+
 struct Account {
 
 	char name[10]; //이름  
@@ -20,6 +27,30 @@ struct Account {
 	char id[20]; //아이디
 	int passowrd; //비밀번호
 };
+
+// menu로 이동하는 분기점이 되는 함수 
+void call_menu() {
+
+	printf("menu로 돌아 가시겠습니까? 원하신다면 Y를 입력해 주십시오\n");
+	char c_key;
+	scanf("%c", &c_key);
+
+	if (c_key == 'Y' || c_key == 'y') {
+		menu();
+	} 
+	else{
+	call_menu();
+	}
+}
+void reset_acc(struct Account p) {
+	strcpy(p.account_num, "0");
+	p.age = 0;
+	p.birth;
+	p.deposit_am = 0;
+	p.deposit_tm = 0;
+	strcpy(p.name, "0");
+	strcpy(p.phone_num, "0");
+}
 
 
 int main(void) {
@@ -38,8 +69,8 @@ int main(void) {
 	//	printAccount(person[0]); 
 
 
-	menu();
-
+	
+	call_menu();
 	return 0;
 
 }
@@ -57,26 +88,26 @@ void printAccount(struct Account p) {
 	printf("계좌번호:%s\n", p.account_num);
 
 }
-void erase(){
+void erase() {
 	int key = 0;
 	printf("삭제할 계정을 입력해주세요 [1,2,3]");
-	scanf("%d",&key);
-	
-	if (key==1){
+	scanf("%d", &key);
+
+	if (key == 1) {
 		reset_acc(person[0]);
 	}
-	else if(key ==2){
+	else if (key == 2) {
 		reset_acc(person[1]);
 	}
-	else if(key ==3){
+	else if (key == 3) {
 		reset_acc(person[2]);
 	}
 	printf("계정삭제가 완료되었습니다\n");
 	call_menu();
 }
 
-void see(){
-	
+void see() {
+
 }
 
 void menu()
@@ -128,8 +159,8 @@ void menu()
 		view_list();
 		menu();
 	}
-	else if(key==7){
-		
+	else if (key == 7) {
+
 	}
 	else {
 		menu();
@@ -309,8 +340,8 @@ void transact()
 
 void new_acc()
 {
-	int i=0;
-	int x=0;
+	int i = 0;
+	int x = 0;
 
 	while (1)
 	{
@@ -326,11 +357,11 @@ void new_acc()
 		scanf("%d", &person[i].age);
 
 		printf("생일:");
-        scanf("%s", person[i].birth);
+		scanf("%s", person[i].birth);
 
 		printf("핸드폰번호:");
 		scanf("%s", person[i].phone_num);
-	
+
 		printf("예치금:");
 		scanf("%d", &person[i].deposit_am);
 
@@ -338,9 +369,9 @@ void new_acc()
 		scanf("%s", person[i].account_num);
 
 		printf("\n");
-		printf("고객님의 고유번호는 %d번 입니다.\n",i);
+		printf("고객님의 고유번호는 %d번 입니다.\n", i);
 		printf("계정이 생성 되었습니다.\n");
-	
+
 		printf("계정을 계속 생성 하시겠습니까(1번:yes ,2번:no)?:");
 		scanf("%d", &x);
 
@@ -352,34 +383,11 @@ void new_acc()
 			break;
 
 
-				
+
 	}
 
 }
 
 
 
-// menu로 이동하는 분기점이 되는 함수 
-void call_menu(){
-	
-	printf("menu로 돌아 가시겠습니까? 원하신다면 Y를 입력해 주십시오\n");
-	char key ;
-	scanf("%c",&key);
-	
-	if(key == 'Y' || key == 'y') {
-		menu();
-//	} 
-//	else{
-//		call_menu();
-	}
-} 
-void reset_acc(struct Account p){
-	strcpy(p.account_num,"0");
-	p.age=0;
-	p.birth;
-	p.deposit_am=0;
-	p.deposit_tm=0;
-	strcpy(p.name,"0");
-	strcpy(p.phone_num,"0");
-}
 
