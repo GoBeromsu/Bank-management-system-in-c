@@ -6,7 +6,8 @@ void menu();
 void view_list();
 void new_acc();
 void transact();
-
+void see();
+void erase();
 struct Account {
 
 	char name[10]; //이름  
@@ -56,6 +57,28 @@ void printAccount(struct Account p) {
 	printf("계좌번호:%s\n", p.account_num);
 
 }
+void erase(){
+	int key = 0;
+	printf("삭제할 계정을 입력해주세요 [1,2,3]");
+	scanf("%d",&key);
+	
+	if (key==1){
+		reset_acc(person[0]);
+	}
+	else if(key ==2){
+		reset_acc(person[1]);
+	}
+	else if(key ==3){
+		reset_acc(person[2]);
+	}
+	printf("계정삭제가 완료되었습니다\n");
+	call_menu();
+}
+
+void see(){
+	
+}
+
 void menu()
 {
 
@@ -356,4 +379,28 @@ void new_acc()
 }
 
 
+
+// menu로 이동하는 분기점이 되는 함수 
+void call_menu(){
+	
+	printf("menu로 돌아 가시겠습니까? 원하신다면 Y를 입력해 주십시오\n");
+	char key ;
+	scanf("%c",&key);
+	
+	if(key == 'Y' || key == 'y') {
+		menu();
+//	} 
+//	else{
+//		call_menu();
+	}
+} 
+void reset_acc(struct Account p){
+	p.account_num =0;
+	p.age=0;
+	p.birth;
+	p.deposit_am=0;
+	p.deposit_tm=0;
+	strcpy(p.name,"0");
+	strcpy(p.phone_num,"0");
+}
 
