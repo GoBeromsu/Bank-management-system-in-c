@@ -32,7 +32,7 @@ struct Account {
 void call_menu() {
 
 	printf("menu로 돌아 가시겠습니까? 원하신다면 Y를 입력해 주십시오\n");
-	char c_key;
+	char c_key = 0;
 	scanf("%c", &c_key);
 
 	if (c_key == 'Y' || c_key == 'y') {
@@ -70,7 +70,9 @@ int main(void) {
 
 
 
-	see();
+	call_menu();
+
+
 	return 0;
 
 }
